@@ -15,11 +15,11 @@
   />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-  <!-- Google Fonts: Plus Jakarta Sans (English) + Hind Siliguri (Bengali) -->
+  <!-- Google Fonts: Cormorant Garamond (Luxury Display) + Plus Jakarta Sans (Corporate UI) + Hind Siliguri (Bengali) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Hind+Siliguri:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
 
@@ -30,12 +30,17 @@
       theme: {
         extend: {
           colors: {
-            navy: '#0F172A',
-            amberbrand: '#D97706',
-            canvas: '#F8FAFC',
+            obsidian: '#090E1A',
+            obsidianlight: '#111827',
+            gold: '#C89B3C',
+            goldbright: '#E5C16C',
+            golddeep: '#9A6F1C',
+            ivory: '#FAF8F5',
+            alabaster: '#F3EFE7',
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', '"Hind Siliguri"', 'system-ui', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
             bengali: ['"Hind Siliguri"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
           },
         },
@@ -52,9 +57,12 @@
     }
     body {
       font-family: 'Plus Jakarta Sans', 'Hind Siliguri', system-ui, sans-serif;
-      background-color: #F8FAFC;
-      color: #0F172A;
+      background-color: #FAF8F5;
+      color: #090E1A;
       -webkit-font-smoothing: antialiased;
+    }
+    .font-editorial {
+      font-family: 'Cormorant Garamond', Georgia, serif;
     }
     .font-bengali {
       font-family: 'Hind Siliguri', 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -65,6 +73,85 @@
     .text-balance {
       text-wrap: balance;
     }
+
+    /* Luxury Atmospheric Hero Backdrop */
+    .luxury-hero-surface {
+      background-color: #090E1A;
+      background-image:
+        radial-gradient(ellipse 75% 60% at 78% 18%, rgba(200, 155, 60, 0.16) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 55% at 15% 85%, rgba(30, 41, 59, 0.65) 0%, transparent 60%);
+    }
+
+    .luxury-dark-surface {
+      background-color: #090E1A;
+      background-image:
+        radial-gradient(ellipse 70% 60% at 85% 20%, rgba(200, 155, 60, 0.11) 0%, transparent 60%);
+    }
+
+    /* Tactile Luxury Button System */
+    .btn-luxury-gold {
+      background: linear-gradient(135deg, #E8C97A 0%, #C89B3C 52%, #AD7E24 100%);
+      color: #090E1A;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.45),
+        0 8px 20px -6px rgba(200, 155, 60, 0.45);
+      transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 180ms ease, filter 180ms ease;
+    }
+    .btn-luxury-gold:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.55),
+        0 12px 26px -6px rgba(200, 155, 60, 0.55);
+    }
+    .btn-luxury-gold:active {
+      transform: translateY(0);
+    }
+
+    .btn-luxury-dark {
+      background: linear-gradient(180deg, #161F33 0%, #090E1A 100%);
+      color: #FAF8F5;
+      border: 1px solid rgba(200, 155, 60, 0.38);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 6px 16px -6px rgba(9, 14, 26, 0.45);
+      transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+    .btn-luxury-dark:hover {
+      border-color: rgba(232, 201, 122, 0.8);
+      transform: translateY(-1px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        0 10px 22px -6px rgba(9, 14, 26, 0.55);
+    }
+    .btn-luxury-dark:active {
+      transform: translateY(0);
+    }
+
+    .btn-luxury-ghost-dark {
+      background: rgba(255, 255, 255, 0.04);
+      color: #F8FAFC;
+      border: 1px solid rgba(200, 155, 60, 0.45);
+      transition: background 180ms ease, border-color 180ms ease, transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-luxury-ghost-dark:hover {
+      background: rgba(200, 155, 60, 0.14);
+      border-color: #E8C97A;
+      transform: translateY(-1px);
+    }
+
+    .btn-luxury-outline-light {
+      background: #FFFFFF;
+      color: #090E1A;
+      border: 1px solid #D6CFC2;
+      transition: border-color 180ms ease, background 180ms ease, transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-luxury-outline-light:hover {
+      border-color: #AD7E24;
+      background: #FAF6EE;
+      transform: translateY(-1px);
+    }
+
     /* Hide horizontal scrollbar on category tab strip while preserving scroll */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
@@ -73,37 +160,37 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
-    /* Smooth drawer & modal transitions using compositor-only properties */
     .drawer-panel {
       transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .backdrop-fade {
-      transition: opacity 200ms ease;
     }
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto !important;
       }
       .drawer-panel,
-      .backdrop-fade {
+      .btn-luxury-gold,
+      .btn-luxury-dark,
+      .btn-luxury-ghost-dark,
+      .btn-luxury-outline-light {
         transition: none !important;
+        transform: none !important;
       }
     }
   </style>
 </head>
-<body class="bg-[#F8FAFC] text-[#0F172A] selection:bg-amber-200 selection:text-[#0F172A]">
+<body class="bg-[#FAF8F5] text-[#090E1A] selection:bg-[#E8C97A]/40 selection:text-[#090E1A]">
 
-  <!-- Top Utility Bar (Non-sticky to respect mobile sticky height cap) -->
-  <div class="bg-[#0F172A] text-slate-200 text-xs border-b border-slate-800">
+  <!-- Top Utility Bar (Non-sticky to preserve clean mobile viewport budget) -->
+  <div class="bg-[#060911] text-slate-300 text-xs border-b border-[#C89B3C]/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-x-6 gap-y-1">
       <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span class="font-medium text-white">Jhenaidah, Bangladesh</span>
-        <span aria-hidden="true" class="text-slate-500">|</span>
+        <span class="font-medium text-slate-100">Jhenaidah, Bangladesh</span>
+        <span aria-hidden="true" class="text-[#C89B3C]/40">|</span>
         <a
           href="https://wa.me/8801926280711"
           target="_blank"
           rel="noopener noreferrer"
-          class="font-medium text-amber-400 hover:text-amber-300 transition-colors tabular-nums"
+          class="font-semibold text-[#E8C97A] hover:text-white transition-colors tabular-nums"
         >
           WhatsApp: 01926280711
         </a>
@@ -115,27 +202,27 @@
   </div>
 
   <!-- Sticky Navigation Header (Clean 3-Zone Contract) -->
-  <header class="sticky top-0 z-40 bg-[#F8FAFC]/95 backdrop-blur-md border-b border-slate-200">
+  <header class="sticky top-0 z-40 bg-[#090E1A]/95 backdrop-blur-md border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4 lg:gap-8">
-      <!-- Zone 1: Single-line Brand Wordmark -->
+      <!-- Zone 1: Single-line Luxury Brand Wordmark -->
       <a
         href="#home"
-        class="text-lg sm:text-xl font-extrabold tracking-tight text-[#0F172A] whitespace-nowrap shrink-0 flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706] rounded"
+        class="text-base sm:text-lg font-bold tracking-[0.06em] text-white whitespace-nowrap shrink-0 flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C89B3C] rounded"
       >
-        <span class="w-8 h-8 rounded-md bg-[#0F172A] text-amber-400 inline-flex items-center justify-center text-sm font-extrabold tracking-tighter shrink-0" aria-hidden="true">S</span>
+        <span class="w-8 h-8 rounded-md bg-gradient-to-br from-[#E8C97A] to-[#AD7E24] text-[#090E1A] inline-flex items-center justify-center text-sm font-extrabold tracking-tighter shrink-0 shadow-sm" aria-hidden="true">S</span>
         <span>SIGNATURE AGENCY</span>
       </a>
 
       <!-- Zone 2: Primary Navigation Links -->
-      <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
-        <a href="#home" class="hover:text-[#0F172A] hover:underline underline-offset-4 decoration-[#D97706] decoration-2 transition-colors whitespace-nowrap shrink-0">Home</a>
-        <a href="#services" class="hover:text-[#0F172A] hover:underline underline-offset-4 decoration-[#D97706] decoration-2 transition-colors whitespace-nowrap shrink-0">Services &amp; Products</a>
-        <a href="#catalog" class="hover:text-[#0F172A] hover:underline underline-offset-4 decoration-[#D97706] decoration-2 transition-colors whitespace-nowrap shrink-0">Catalog</a>
-        <a href="#why-us" class="hover:text-[#0F172A] hover:underline underline-offset-4 decoration-[#D97706] decoration-2 transition-colors whitespace-nowrap shrink-0">Why Choose Us</a>
-        <a href="#contact" class="hover:text-[#0F172A] hover:underline underline-offset-4 decoration-[#D97706] decoration-2 transition-colors whitespace-nowrap shrink-0">Contact</a>
+      <nav aria-label="Primary Navigation" class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#home" class="hover:text-[#E8C97A] hover:underline underline-offset-4 decoration-[#C89B3C] decoration-2 transition-colors whitespace-nowrap shrink-0">Home</a>
+        <a href="#services" class="hover:text-[#E8C97A] hover:underline underline-offset-4 decoration-[#C89B3C] decoration-2 transition-colors whitespace-nowrap shrink-0">Services &amp; Products</a>
+        <a href="#catalog" class="hover:text-[#E8C97A] hover:underline underline-offset-4 decoration-[#C89B3C] decoration-2 transition-colors whitespace-nowrap shrink-0">Catalog</a>
+        <a href="#why-us" class="hover:text-[#E8C97A] hover:underline underline-offset-4 decoration-[#C89B3C] decoration-2 transition-colors whitespace-nowrap shrink-0">Why Choose Us</a>
+        <a href="#contact" class="hover:text-[#E8C97A] hover:underline underline-offset-4 decoration-[#C89B3C] decoration-2 transition-colors whitespace-nowrap shrink-0">Contact</a>
       </nav>
 
-      <!-- Zone 3: Live Search & Order Bag Trigger -->
+      <!-- Zone 3: Live Search & Luxury Order Bag Trigger -->
       <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
         <div class="relative hidden sm:block">
           <label for="nav-search" class="sr-only">Search services or products</label>
@@ -149,7 +236,7 @@
             id="nav-search"
             type="search"
             placeholder="Search products, bags, print..."
-            class="w-44 md:w-56 pl-9 pr-3 py-1.5 text-sm bg-white border border-slate-200 rounded-lg text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:border-[#D97706] focus:ring-2 focus:ring-amber-500/20 transition-colors"
+            class="w-44 md:w-56 pl-9 pr-3 py-1.5 text-sm bg-white/5 border border-white/15 rounded-lg text-white placeholder:text-slate-400 focus:outline-none focus:bg-white/10 focus:border-[#C89B3C] transition-colors"
           />
         </div>
 
@@ -157,9 +244,9 @@
           id="open-bag-btn"
           type="button"
           aria-label="Open Order Bag"
-          class="inline-flex items-center gap-2 px-3.5 py-2 text-sm font-semibold text-white bg-[#0F172A] hover:bg-slate-800 rounded-lg transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706] min-h-[40px]"
+          class="btn-luxury-gold inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm font-bold rounded-lg whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8C97A] min-h-[40px]"
         >
-          <svg class="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
             <path d="M3 6h18"></path>
             <path d="M16 10a4 4 0 0 1-8 0"></path>
@@ -167,7 +254,7 @@
           <span class="hidden xs:inline">Order Bag</span>
           <span
             id="bag-count-badge"
-            class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-xs font-bold bg-[#D97706] text-white rounded tabular-nums"
+            class="inline-flex items-center justify-center min-w-[20px] h-5 px-1.5 text-xs font-extrabold bg-[#090E1A] text-[#E8C97A] rounded tabular-nums"
           >0</span>
         </button>
 
@@ -177,7 +264,7 @@
           type="button"
           aria-label="Toggle navigation menu"
           aria-expanded="false"
-          class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200 bg-white text-[#0F172A] hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706]"
+          class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-white/15 bg-white/5 text-white hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C89B3C]"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M4 6h16M4 12h16M4 18h16"></path>
@@ -187,58 +274,58 @@
     </div>
 
     <!-- Mobile Navigation & Search Panel -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-200 bg-white px-4 py-4 space-y-3">
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-[#0D1424] px-4 py-4 space-y-3">
       <div class="relative sm:hidden">
         <label for="mobile-search" class="sr-only">Search services or products</label>
         <input
           id="mobile-search"
           type="search"
           placeholder="Search services or products..."
-          class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:border-[#D97706]"
+          class="w-full px-3.5 py-2.5 text-sm bg-white/5 border border-white/15 rounded-lg text-white placeholder:text-slate-400 focus:outline-none focus:border-[#C89B3C]"
         />
       </div>
-      <nav aria-label="Mobile Navigation" class="grid grid-cols-2 gap-2 text-sm font-medium text-slate-700">
-        <a href="#home" class="mobile-nav-link px-3 py-2.5 rounded-lg hover:bg-slate-50">Home</a>
-        <a href="#services" class="mobile-nav-link px-3 py-2.5 rounded-lg hover:bg-slate-50">Services &amp; Products</a>
-        <a href="#catalog" class="mobile-nav-link px-3 py-2.5 rounded-lg hover:bg-slate-50">Catalog</a>
-        <a href="#why-us" class="mobile-nav-link px-3 py-2.5 rounded-lg hover:bg-slate-50">Why Choose Us</a>
-        <a href="#contact" class="mobile-nav-link px-3 py-2.5 rounded-lg hover:bg-slate-50 col-span-2">Contact &amp; Custom Quote</a>
+      <nav aria-label="Mobile Navigation" class="grid grid-cols-2 gap-2 text-sm font-medium text-slate-200">
+        <a href="#home" class="mobile-nav-link px-3 py-2.5 rounded-lg hover:bg-white/10">Home</a>
+        <a href="#services" class="mobile-nav-link px-3 py-2.5 rounded-lg hover:bg-white/10">Services &amp; Products</a>
+        <a href="#catalog" class="mobile-nav-link px-3 py-2.5 rounded-lg hover:bg-white/10">Catalog</a>
+        <a href="#why-us" class="mobile-nav-link px-3 py-2.5 rounded-lg hover:bg-white/10">Why Choose Us</a>
+        <a href="#contact" class="mobile-nav-link px-3 py-2.5 rounded-lg hover:bg-white/10 col-span-2">Contact &amp; Custom Quote</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section id="home" class="pt-10 pb-14 lg:pt-14 lg:pb-20 border-b border-slate-200 bg-[#F8FAFC]">
+    <!-- Luxury Obsidian Hero Section -->
+    <section id="home" class="luxury-hero-surface text-white pt-12 pb-14 lg:pt-16 lg:pb-20 border-b border-[#C89B3C]/20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-stretch">
           <!-- Left Editorial Column -->
           <div class="lg:col-span-6 flex flex-col justify-center">
-            <p class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#B45309] mb-4">
+            <p class="text-xs sm:text-sm font-semibold uppercase tracking-[0.14em] text-[#E8C97A] mb-4">
               Branding &bull; Packaging &bull; Print Solutions
-              <span aria-hidden="true" class="mx-2 text-slate-300">/</span>
-              <span class="text-slate-600 normal-case font-medium">Jhenaidah, Bangladesh</span>
+              <span aria-hidden="true" class="mx-2 text-slate-600">/</span>
+              <span class="text-slate-300 normal-case tracking-normal font-medium">Jhenaidah, Bangladesh</span>
             </p>
 
-            <h1 class="text-[clamp(2.25rem,4vw,3.5rem)] font-extrabold leading-[1.08] tracking-tight text-[#0F172A] text-balance mb-5">
-              Where Ideas Become Identity
+            <h1 class="text-[clamp(2.35rem,4.2vw,3.75rem)] font-extrabold leading-[1.06] tracking-tight text-white text-balance mb-5">
+              Where Ideas Become <span class="font-editorial italic font-semibold text-[#E8C97A]">Identity</span>
             </h1>
 
-            <h2 class="font-bengali text-xl sm:text-2xl font-bold leading-snug text-slate-800 text-balance mb-4">
+            <h2 class="font-bengali text-xl sm:text-2xl font-semibold leading-snug text-slate-100 text-balance mb-4">
               আপনার ব্যবসার ডিজাইন, ব্র্যান্ডিং, প্যাকেজিং ও প্রিন্টিং সল্যুশন—সব এক ঠিকানায়!
             </h2>
 
-            <p class="font-bengali text-base leading-relaxed text-slate-600 max-w-2xl mb-8">
-              আপনার ব্যবসা, প্রতিষ্ঠান কিংবা নিজস্ব ব্র্যান্ডকে দিন আকর্ষণীয় ও পেশাদার পরিচয়। সৃজনশীল ডিজাইন থেকে শুরু করে মানসম্মত প্রিন্টিং ও কাস্টমাইজড পণ্য সরবরাহ—আপনার প্রয়োজনের সমন্বিত সমাধান নিয়ে কাজ করছে <strong class="font-semibold text-[#0F172A]">SIGNATURE AGENCY</strong>।
+            <p class="font-bengali text-base leading-relaxed text-slate-300 max-w-2xl mb-8">
+              আপনার ব্যবসা, প্রতিষ্ঠান কিংবা নিজস্ব ব্র্যান্ডকে দিন আকর্ষণীয় ও পেশাদার পরিচয়। সৃজনশীল ডিজাইন থেকে শুরু করে মানসম্মত প্রিন্টিং ও কাস্টমাইজড পণ্য সরবরাহ—আপনার প্রয়োজনের সমন্বিত সমাধান নিয়ে কাজ করছে <strong class="font-semibold text-white">SIGNATURE AGENCY</strong>।
             </p>
 
-            <div class="flex flex-wrap items-center gap-3.5">
+            <div class="flex flex-wrap items-center gap-4">
               <a
                 href="#catalog"
-                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-[#0F172A] hover:bg-slate-800 rounded-lg transition-colors whitespace-nowrap shrink-0 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706]"
+                class="btn-luxury-gold inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-sm font-bold rounded-lg whitespace-nowrap shrink-0 min-h-[46px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8C97A]"
               >
                 <span>Explore Services &amp; Products</span>
-                <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
               </a>
@@ -247,9 +334,9 @@
                 href="https://wa.me/8801926280711"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-[#0F172A] bg-white border border-slate-300 hover:border-[#D97706] hover:bg-amber-50/40 rounded-lg transition-colors whitespace-nowrap shrink-0 min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706]"
+                class="btn-luxury-ghost-dark inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold rounded-lg whitespace-nowrap shrink-0 min-h-[46px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8C97A]"
               >
-                <svg class="w-4 h-4 text-[#B45309]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <svg class="w-4 h-4 text-[#E8C97A]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                 </svg>
                 <span>Order on WhatsApp</span>
@@ -257,12 +344,12 @@
             </div>
           </div>
 
-          <!-- Right Visual Showcase Collage (2x2 Studio Photography Grid) -->
+          <!-- Right Visual Showcase Collage (2x2 Framed Luxury Gallery) -->
           <div class="lg:col-span-6 grid grid-cols-2 gap-4 items-stretch">
             <button
               type="button"
               data-jump-category="branding"
-              class="group relative overflow-hidden rounded-xl border border-slate-200 bg-slate-200 aspect-[4/3] lg:aspect-auto text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706]"
+              class="group relative overflow-hidden rounded-xl border border-white/15 hover:border-[#C89B3C]/60 bg-slate-900 aspect-[4/3] lg:aspect-auto text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8C97A]"
             >
               <img
                 src="/assets/images/hero_branding_stationery_1794909793633.jpg"
@@ -271,22 +358,20 @@
                 class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                 onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
               />
-              <div class="hidden w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 p-4 flex items-center justify-center text-white text-sm font-medium">
+              <div class="hidden w-full h-full bg-gradient-to-br from-slate-800 to-slate-950 p-4 flex items-center justify-center text-white text-sm font-medium">
                 Brand Identity &amp; Stationery
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-3.5 right-3.5 flex items-end justify-between gap-2 text-white">
-                <div>
-                  <p class="text-[11px] font-medium uppercase tracking-wider text-amber-300">01. Identity</p>
-                  <p class="text-sm font-semibold leading-tight">Branding &amp; Stationery</p>
-                </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#060911]/90 via-[#060911]/25 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3.5 left-4 right-4 text-white">
+                <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E8C97A]">01. Identity</p>
+                <p class="text-sm font-semibold leading-tight mt-0.5">Branding &amp; Stationery</p>
               </div>
             </button>
 
             <button
               type="button"
               data-jump-category="packaging"
-              class="group relative overflow-hidden rounded-xl border border-slate-200 bg-slate-200 aspect-[4/3] lg:aspect-auto text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706]"
+              class="group relative overflow-hidden rounded-xl border border-white/15 hover:border-[#C89B3C]/60 bg-slate-900 aspect-[4/3] lg:aspect-auto text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8C97A]"
             >
               <img
                 src="/assets/images/hero_packaging_boxes_1794909794917.jpg"
@@ -295,20 +380,20 @@
                 class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                 onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
               />
-              <div class="hidden w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 p-4 flex items-center justify-center text-white text-sm font-medium">
+              <div class="hidden w-full h-full bg-gradient-to-br from-slate-800 to-slate-950 p-4 flex items-center justify-center text-white text-sm font-medium">
                 Packaging Boxes &amp; Pouches
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-3.5 right-3.5 text-white">
-                <p class="text-[11px] font-medium uppercase tracking-wider text-amber-300">02. Packaging</p>
-                <p class="text-sm font-semibold leading-tight">Boxes, Labels &amp; Pouches</p>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#060911]/90 via-[#060911]/25 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3.5 left-4 right-4 text-white">
+                <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E8C97A]">02. Packaging</p>
+                <p class="text-sm font-semibold leading-tight mt-0.5">Boxes, Labels &amp; Pouches</p>
               </div>
             </button>
 
             <button
               type="button"
               data-jump-category="packaging"
-              class="group relative overflow-hidden rounded-xl border border-slate-200 bg-slate-200 aspect-[4/3] lg:aspect-auto text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706]"
+              class="group relative overflow-hidden rounded-xl border border-white/15 hover:border-[#C89B3C]/60 bg-slate-900 aspect-[4/3] lg:aspect-auto text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8C97A]"
             >
               <img
                 src="/assets/images/hero_shopping_bags_1794909794294.jpg"
@@ -317,20 +402,20 @@
                 class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                 onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
               />
-              <div class="hidden w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 p-4 flex items-center justify-center text-white text-sm font-medium">
+              <div class="hidden w-full h-full bg-gradient-to-br from-slate-800 to-slate-950 p-4 flex items-center justify-center text-white text-sm font-medium">
                 Custom Shopping Bags
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-3.5 right-3.5 text-white">
-                <p class="text-[11px] font-medium uppercase tracking-wider text-amber-300">03. Carry Bags</p>
-                <p class="text-sm font-semibold leading-tight">Paper, Non-Woven &amp; Jute</p>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#060911]/90 via-[#060911]/25 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3.5 left-4 right-4 text-white">
+                <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E8C97A]">03. Carry Bags</p>
+                <p class="text-sm font-semibold leading-tight mt-0.5">Paper, Non-Woven &amp; Jute</p>
               </div>
             </button>
 
             <button
               type="button"
               data-jump-category="apparel"
-              class="group relative overflow-hidden rounded-xl border border-slate-200 bg-slate-200 aspect-[4/3] lg:aspect-auto text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706]"
+              class="group relative overflow-hidden rounded-xl border border-white/15 hover:border-[#C89B3C]/60 bg-slate-900 aspect-[4/3] lg:aspect-auto text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8C97A]"
             >
               <img
                 src="/assets/images/hero_apparel_tshirts_1794909794980.jpg"
@@ -339,54 +424,54 @@
                 class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300"
                 onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
               />
-              <div class="hidden w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 p-4 flex items-center justify-center text-white text-sm font-medium">
+              <div class="hidden w-full h-full bg-gradient-to-br from-slate-800 to-slate-950 p-4 flex items-center justify-center text-white text-sm font-medium">
                 Apparel &amp; T-Shirt Printing
               </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none"></div>
-              <div class="absolute bottom-3 left-3.5 right-3.5 text-white">
-                <p class="text-[11px] font-medium uppercase tracking-wider text-amber-300">04. Apparel</p>
-                <p class="text-sm font-semibold leading-tight">Custom Graphic T-Shirts</p>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#060911]/90 via-[#060911]/25 to-transparent pointer-events-none"></div>
+              <div class="absolute bottom-3.5 left-4 right-4 text-white">
+                <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E8C97A]">04. Apparel</p>
+                <p class="text-sm font-semibold leading-tight mt-0.5">Custom Graphic T-Shirts</p>
               </div>
             </button>
           </div>
         </div>
 
         <!-- 4-Column Full-Width Operational Summary Strip -->
-        <div class="mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pt-8 border-t border-slate-200">
+        <div class="mt-10 lg:mt-14 grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 pt-8 border-t border-white/10">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Integrated Workflow</p>
-            <p class="mt-1 text-base font-bold text-[#0F172A] tabular-nums">06 Creative Divisions</p>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E8C97A]">Integrated Workflow</p>
+            <p class="mt-1 text-base font-bold text-white tabular-nums">06 Creative Divisions</p>
           </div>
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Service Scope</p>
-            <p class="mt-1 text-base font-bold text-[#0F172A] tabular-nums">36+ Custom Solutions</p>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E8C97A]">Service Scope</p>
+            <p class="mt-1 text-base font-bold text-white tabular-nums">36+ Custom Solutions</p>
           </div>
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Local Dispatch</p>
-            <p class="mt-1 text-base font-bold text-[#0F172A]">Jhenaidah Town Delivery</p>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E8C97A]">Local Dispatch</p>
+            <p class="mt-1 text-base font-bold text-white">Jhenaidah Town Delivery</p>
           </div>
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500">Bangladesh Courier</p>
-            <p class="mt-1 text-base font-bold text-[#0F172A] tabular-nums">64 Districts Coverage</p>
+            <p class="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#E8C97A]">Bangladesh Courier</p>
+            <p class="mt-1 text-base font-bold text-white tabular-nums">64 Districts Coverage</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive 6-Category Services Explorer -->
-    <section id="services" class="py-14 lg:py-20 bg-white border-b border-slate-200">
+    <!-- Interactive 6-Category Services Explorer (Warm Silk Ivory Surface) -->
+    <section id="services" class="py-14 lg:py-20 bg-[#FAF8F5] border-b border-[#E7E2D8]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-9">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-[#B45309] mb-2">
+            <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#9A6F1C] mb-2">
               Complete Service Directory
             </p>
-            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] text-balance">
-              Six Specialized Divisions Under One Roof
+            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#090E1A] text-balance">
+              Six Specialized Divisions <span class="font-editorial italic font-semibold text-[#9A6F1C]">Under One Roof</span>
             </h2>
           </div>
           <p class="text-sm text-slate-600 max-w-md">
-            Select any category tab to explore every creative, print, packaging, apparel, educational, and gifting solution we deliver.
+            Select any division below to inspect our complete design, print, packaging, apparel, educational, and corporate gifting deliverables.
           </p>
         </div>
 
@@ -395,26 +480,26 @@
           id="service-tabs"
           role="tablist"
           aria-label="Service Categories"
-          class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 mb-8 border-b border-slate-200"
+          class="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-3 mb-8 border-b border-[#E7E2D8]"
         >
           <!-- Tabs injected by JS -->
         </div>
 
         <!-- Active Category Detailed Explorer Panel -->
         <div id="service-explorer-panel" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <!-- Left Division Summary -->
-          <div class="lg:col-span-5 bg-[#F8FAFC] border border-slate-200 rounded-xl p-6 sm:p-7">
+          <!-- Left Division Summary Card -->
+          <div class="lg:col-span-5 bg-white border border-[#E7E2D8] rounded-xl p-6 sm:p-7 shadow-[0_12px_32px_-16px_rgba(9,14,26,0.12)]">
             <div class="flex items-center justify-between gap-3 mb-3">
-              <span id="explorer-index" class="text-xs font-bold uppercase tracking-wider text-[#B45309] tabular-nums">01 / 06</span>
+              <span id="explorer-index" class="text-xs font-bold uppercase tracking-[0.12em] text-[#9A6F1C] tabular-nums">01 / 06</span>
               <span id="explorer-count" class="text-xs font-medium text-slate-500 tabular-nums">7 Services</span>
             </div>
-            <h3 id="explorer-title" class="text-xl font-extrabold text-[#0F172A] tracking-tight mb-3">
+            <h3 id="explorer-title" class="text-xl font-extrabold text-[#090E1A] tracking-tight mb-3">
               BRANDING &amp; CREATIVE DESIGN
             </h3>
             <p id="explorer-desc" class="text-sm leading-relaxed text-slate-600 mb-6">
               Logo systems, corporate stationery, marketing collaterals, social creatives, and motion ads engineered to give your brand instant authority.
             </p>
-            <div class="aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-100 mb-6">
+            <div class="aspect-[4/3] rounded-lg overflow-hidden border border-[#E7E2D8] bg-[#F3EFE7] mb-6">
               <img
                 id="explorer-image"
                 src="/assets/images/hero_branding_stationery_1794909793633.jpg"
@@ -427,14 +512,14 @@
               <button
                 id="explorer-filter-catalog-btn"
                 type="button"
-                class="px-4 py-2.5 text-xs font-semibold text-white bg-[#0F172A] hover:bg-slate-800 rounded-lg transition-colors whitespace-nowrap shrink-0 min-h-[40px]"
+                class="btn-luxury-dark px-5 py-2.5 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 min-h-[42px]"
               >
                 View Packages in Catalog
               </button>
               <button
                 id="explorer-quote-btn"
                 type="button"
-                class="px-4 py-2.5 text-xs font-semibold text-[#0F172A] bg-white border border-slate-300 hover:border-[#D97706] rounded-lg transition-colors whitespace-nowrap shrink-0 min-h-[40px]"
+                class="btn-luxury-outline-light px-4 py-2.5 text-xs font-semibold rounded-lg whitespace-nowrap shrink-0 min-h-[42px]"
               >
                 Request Custom Quote
               </button>
@@ -442,12 +527,12 @@
           </div>
 
           <!-- Right Division Full Checklist -->
-          <div class="lg:col-span-7">
-            <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
-              <h4 class="text-sm font-bold text-[#0F172A] uppercase tracking-wider">Included Services &amp; Deliverables</h4>
+          <div class="lg:col-span-7 bg-white border border-[#E7E2D8] rounded-xl p-6 sm:p-7">
+            <div class="flex items-center justify-between border-b border-[#E7E2D8] pb-3.5 mb-2">
+              <h4 class="text-xs font-bold text-[#090E1A] uppercase tracking-[0.12em]">Included Services &amp; Deliverables</h4>
               <span class="text-xs text-slate-500">Click any item to request a quote</span>
             </div>
-            <ul id="explorer-items-list" class="divide-y divide-slate-200 border-b border-slate-200">
+            <ul id="explorer-items-list" class="divide-y divide-[#ECE7DD]">
               <!-- Service items injected by JS -->
             </ul>
           </div>
@@ -455,15 +540,15 @@
       </div>
     </section>
 
-    <!-- Filterable Product & Package Catalog -->
-    <section id="catalog" class="py-14 lg:py-20 bg-[#F8FAFC] border-b border-slate-200">
+    <!-- Filterable Product & Package Catalog (Warm Alabaster Surface) -->
+    <section id="catalog" class="py-14 lg:py-20 bg-[#F3EFE7] border-b border-[#E2DDD2]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-[#B45309] mb-2">
-              Order &amp; Customize Online
+            <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#9A6F1C] mb-2">
+              Curated Studio Storefront
             </p>
-            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] text-balance">
+            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#090E1A] text-balance">
               Featured Packages &amp; Custom Products
             </h2>
           </div>
@@ -475,23 +560,23 @@
                 id="catalog-search"
                 type="search"
                 placeholder="Filter by product or keyword..."
-                class="w-64 pl-3.5 pr-9 py-2 text-sm bg-white border border-slate-200 rounded-lg text-[#0F172A] placeholder:text-slate-400 focus:outline-none focus:border-[#D97706]"
+                class="w-64 pl-3.5 pr-14 py-2.5 text-sm bg-white border border-[#D6CFC2] rounded-lg text-[#090E1A] placeholder:text-slate-400 focus:outline-none focus:border-[#C89B3C]"
               />
               <button
                 id="clear-filters-btn"
                 type="button"
-                class="hidden absolute inset-y-0 right-2.5 text-xs font-semibold text-[#B45309] hover:text-[#0F172A]"
+                class="hidden absolute inset-y-0 right-3 text-xs font-bold text-[#9A6F1C] hover:text-[#090E1A]"
               >
                 Reset
               </button>
             </div>
-            <span id="catalog-result-count" class="text-xs font-medium text-slate-500 tabular-nums whitespace-nowrap">
+            <span id="catalog-result-count" class="text-xs font-semibold text-slate-600 tabular-nums whitespace-nowrap">
               15 items shown
             </span>
           </div>
         </div>
 
-        <!-- Category Filter Pills/Buttons -->
+        <!-- Category Filter Buttons -->
         <div id="catalog-filter-bar" class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-3 mb-8">
           <!-- Filter buttons injected by JS -->
         </div>
@@ -502,13 +587,13 @@
         </div>
 
         <!-- Empty Search State -->
-        <div id="catalog-empty" class="hidden text-center py-14 px-6 bg-white border border-slate-200 rounded-xl">
-          <p class="text-base font-bold text-[#0F172A] mb-2">No matching products or services found</p>
+        <div id="catalog-empty" class="hidden text-center py-14 px-6 bg-white border border-[#E7E2D8] rounded-xl">
+          <p class="text-base font-bold text-[#090E1A] mb-2">No matching products or services found</p>
           <p class="text-sm text-slate-600 mb-5">Try another keyword or clear your active category filter.</p>
           <button
             id="empty-reset-btn"
             type="button"
-            class="px-5 py-2.5 text-xs font-semibold text-white bg-[#0F172A] hover:bg-slate-800 rounded-lg transition-colors"
+            class="btn-luxury-dark px-5 py-2.5 text-xs font-semibold rounded-lg"
           >
             Show All Packages
           </button>
@@ -516,77 +601,77 @@
       </div>
     </section>
 
-    <!-- Why Choose SIGNATURE AGENCY Section -->
-    <section id="why-us" class="py-14 lg:py-20 bg-white border-b border-slate-200">
+    <!-- Why Choose SIGNATURE AGENCY Section (Deep Obsidian Contrast Block) -->
+    <section id="why-us" class="luxury-dark-surface text-white py-14 lg:py-20 border-b border-[#C89B3C]/20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           <div class="lg:col-span-5">
-            <p class="text-xs font-semibold uppercase tracking-wider text-[#B45309] mb-2">
-              Studio Standards
+            <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#E8C97A] mb-2">
+              Executive Standards
             </p>
-            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-[#0F172A] text-balance mb-4">
+            <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-white text-balance mb-4">
               WHY CHOOSE SIGNATURE AGENCY?
             </h2>
-            <p class="text-sm sm:text-base leading-relaxed text-slate-600 mb-6">
-              From initial brand concept in our design studio to finished print runs, packaging production, and doorstep delivery—we eliminate fragmented vendors so your brand stays consistent at every touchpoint.
+            <p class="text-sm sm:text-base leading-relaxed text-slate-300 mb-7">
+              From initial brand architecture in our design studio to finished print runs, packaging production, and doorstep dispatch—we eliminate fragmented vendors so your brand identity remains uncompromising at every touchpoint.
             </p>
-            <div class="p-6 rounded-xl bg-[#0F172A] text-white">
-              <p class="font-bengali text-lg font-semibold leading-relaxed text-amber-300 mb-2">
+            <div class="p-6 sm:p-7 rounded-xl bg-white/[0.04] border border-[#C89B3C]/35">
+              <p class="font-bengali text-lg sm:text-xl font-semibold leading-relaxed text-[#E8C97A] mb-2">
                 আপনার আইডিয়া, আমাদের সৃজনশীলতা—আপনার ব্র্যান্ডের নতুন পরিচয়!
               </p>
-              <p class="text-xs text-slate-300">
+              <p class="text-xs text-slate-300 leading-relaxed">
                 Serving growing businesses, startups, institutions, and retail brands from Jhenaidah to every district across Bangladesh.
               </p>
             </div>
           </div>
 
-          <div class="lg:col-span-7 divide-y divide-slate-200 border-t border-b border-slate-200">
+          <div class="lg:col-span-7 divide-y divide-white/10 border-t border-b border-white/10">
             <div class="py-5 flex items-start gap-5">
-              <span class="text-sm font-bold text-[#B45309] tabular-nums pt-0.5 shrink-0">01.</span>
+              <span class="text-sm font-bold text-[#E8C97A] tabular-nums pt-0.5 shrink-0">01.</span>
               <div>
-                <h3 class="text-base font-bold text-[#0F172A]">Creative &amp; Professional Design</h3>
-                <p class="mt-1 text-sm text-slate-600">
-                  Original brand identities, typography, and commercial layouts crafted for immediate shelf and digital impact.
+                <h3 class="text-base font-bold text-white">Creative &amp; Professional Design</h3>
+                <p class="mt-1 text-sm text-slate-300">
+                  Original brand identities, typography, and commercial layouts crafted for immediate shelf and digital authority.
                 </p>
               </div>
             </div>
 
             <div class="py-5 flex items-start gap-5">
-              <span class="text-sm font-bold text-[#B45309] tabular-nums pt-0.5 shrink-0">02.</span>
+              <span class="text-sm font-bold text-[#E8C97A] tabular-nums pt-0.5 shrink-0">02.</span>
               <div>
-                <h3 class="text-base font-bold text-[#0F172A]">Customized Solutions for Every Business</h3>
-                <p class="mt-1 text-sm text-slate-600">
-                  Flexible dimensions, materials, GSM paper weights, and order quantities tailored to startups, shops, and corporations.
+                <h3 class="text-base font-bold text-white">Customized Solutions for Every Business</h3>
+                <p class="mt-1 text-sm text-slate-300">
+                  Flexible dimensions, materials, GSM paper weights, and order quantities tailored to startups, boutiques, and enterprises.
                 </p>
               </div>
             </div>
 
             <div class="py-5 flex items-start gap-5">
-              <span class="text-sm font-bold text-[#B45309] tabular-nums pt-0.5 shrink-0">03.</span>
+              <span class="text-sm font-bold text-[#E8C97A] tabular-nums pt-0.5 shrink-0">03.</span>
               <div>
-                <h3 class="text-base font-bold text-[#0F172A]">Design to Printing &amp; Product Supply</h3>
-                <p class="mt-1 text-sm text-slate-600">
+                <h3 class="text-base font-bold text-white">Design to Printing &amp; Product Supply</h3>
+                <p class="mt-1 text-sm text-slate-300">
                   Single-point accountability from digital artwork creation through offset/digital printing, stitching, and finished packaging.
                 </p>
               </div>
             </div>
 
             <div class="py-5 flex items-start gap-5">
-              <span class="text-sm font-bold text-[#B45309] tabular-nums pt-0.5 shrink-0">04.</span>
+              <span class="text-sm font-bold text-[#E8C97A] tabular-nums pt-0.5 shrink-0">04.</span>
               <div>
-                <h3 class="text-base font-bold text-[#0F172A]">Quality-focused Production</h3>
-                <p class="mt-1 text-sm text-slate-600">
+                <h3 class="text-base font-bold text-white">Quality-focused Production</h3>
+                <p class="mt-1 text-sm text-slate-300">
                   Color-calibrated print checks, durable lamination, clean die-cutting, and crisp stitching inspected before dispatch.
                 </p>
               </div>
             </div>
 
             <div class="py-5 flex items-start gap-5">
-              <span class="text-sm font-bold text-[#B45309] tabular-nums pt-0.5 shrink-0">05.</span>
+              <span class="text-sm font-bold text-[#E8C97A] tabular-nums pt-0.5 shrink-0">05.</span>
               <div>
-                <h3 class="text-base font-bold text-[#0F172A]">Reliable Order Management</h3>
-                <p class="mt-1 text-sm text-slate-600">
-                  Clear pricing in BDT, direct WhatsApp coordination on 01926280711, and dependable delivery in Jhenaidah and nationwide.
+                <h3 class="text-base font-bold text-white">Reliable Order Management</h3>
+                <p class="mt-1 text-sm text-slate-300">
+                  Transparent pricing in BDT, direct WhatsApp coordination on 01926280711, and dependable delivery in Jhenaidah and nationwide.
                 </p>
               </div>
             </div>
@@ -595,14 +680,14 @@
       </div>
     </section>
 
-    <!-- LET'S BUILD YOUR BRAND & Contact Section -->
-    <section id="contact" class="py-14 lg:py-20 bg-[#F8FAFC]">
+    <!-- LET'S BUILD YOUR BRAND & Contact Section (Warm Silk Ivory) -->
+    <section id="contact" class="py-14 lg:py-20 bg-[#FAF8F5]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-2xl mb-10">
-          <p class="text-xs font-semibold uppercase tracking-wider text-[#B45309] mb-2">
-            Start a Project
+          <p class="text-xs font-bold uppercase tracking-[0.14em] text-[#9A6F1C] mb-2">
+            Private Consultation &amp; Custom Orders
           </p>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0F172A] text-balance mb-3">
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#090E1A] text-balance mb-3">
             LET'S BUILD YOUR BRAND
           </h2>
           <p class="font-bengali text-base sm:text-lg text-slate-700 leading-relaxed">
@@ -611,48 +696,48 @@
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <!-- Contact Info Card -->
-          <div class="lg:col-span-5 bg-[#0F172A] text-white rounded-xl p-7 sm:p-8 space-y-6">
+          <!-- Luxury Obsidian Contact Card -->
+          <div class="lg:col-span-5 luxury-dark-surface text-white rounded-xl p-7 sm:p-8 border border-[#C89B3C]/30 space-y-6 shadow-[0_18px_40px_-18px_rgba(9,14,26,0.5)]">
             <div>
-              <h3 class="text-xl font-extrabold tracking-tight">SIGNATURE AGENCY</h3>
-              <p class="text-xs font-medium uppercase tracking-wider text-amber-400 mt-1">
+              <h3 class="text-xl font-extrabold tracking-[0.04em]">SIGNATURE AGENCY</h3>
+              <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#E8C97A] mt-1.5">
                 Branding &bull; Packaging &bull; Print Solutions
               </p>
             </div>
 
-            <div class="space-y-4 pt-4 border-t border-slate-800 text-sm">
+            <div class="space-y-4 pt-5 border-t border-white/10 text-sm">
               <div>
-                <p class="text-xs uppercase tracking-wider text-slate-400">WhatsApp &amp; Direct Call</p>
+                <p class="text-[11px] uppercase tracking-[0.12em] text-slate-400">WhatsApp &amp; Direct Call</p>
                 <a
                   href="https://wa.me/8801926280711"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="mt-1 inline-flex items-center gap-2 text-lg font-bold text-white hover:text-amber-400 transition-colors tabular-nums"
+                  class="mt-1 inline-flex items-center gap-2 text-xl font-bold text-white hover:text-[#E8C97A] transition-colors tabular-nums"
                 >
                   <span>01926280711</span>
                 </a>
               </div>
 
               <div>
-                <p class="text-xs uppercase tracking-wider text-slate-400">Studio Location</p>
+                <p class="text-[11px] uppercase tracking-[0.12em] text-slate-400">Studio Location</p>
                 <p class="mt-1 font-medium text-slate-200">Jhenaidah, Bangladesh</p>
               </div>
 
               <div>
-                <p class="text-xs uppercase tracking-wider text-slate-400">Delivery Coverage</p>
+                <p class="text-[11px] uppercase tracking-[0.12em] text-slate-400">Delivery Coverage</p>
                 <p class="mt-1 text-slate-300">Jhenaidah Local Delivery &amp; Nationwide Courier Service</p>
               </div>
             </div>
 
-            <div class="pt-4 border-t border-slate-800">
+            <div class="pt-5 border-t border-white/10">
               <a
                 href="https://wa.me/8801926280711"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-[#0F172A] bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors min-h-[44px]"
+                class="btn-luxury-gold w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-bold rounded-lg min-h-[46px]"
               >
                 <span>Message on WhatsApp Now</span>
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
               </a>
@@ -660,10 +745,10 @@
           </div>
 
           <!-- Request a Custom Quote Form -->
-          <div class="lg:col-span-7 bg-white border border-slate-200 rounded-xl p-6 sm:p-8">
-            <h3 class="text-lg font-bold text-[#0F172A] mb-1">Request a Custom Quote</h3>
+          <div class="lg:col-span-7 bg-white border border-[#E7E2D8] rounded-xl p-6 sm:p-8 shadow-[0_12px_34px_-16px_rgba(9,14,26,0.1)]">
+            <h3 class="text-lg font-bold text-[#090E1A] mb-1">Request a Custom Quote</h3>
             <p class="text-sm text-slate-600 mb-6">
-              Share your requirements below to receive an instant estimate or open the request directly in WhatsApp.
+              Share your specifications below to receive a tailored estimate or send your brief directly via WhatsApp.
             </p>
 
             <form id="quote-form" class="space-y-4" novalidate>
@@ -677,7 +762,7 @@
                     type="text"
                     required
                     placeholder="e.g., Tanvir Ahmed"
-                    class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg text-[#0F172A] focus:outline-none focus:bg-white focus:border-[#D97706]"
+                    class="w-full px-3.5 py-2.5 text-sm bg-[#FAF8F5] border border-[#E2DDD2] rounded-lg text-[#090E1A] focus:outline-none focus:bg-white focus:border-[#C89B3C]"
                   />
                 </div>
                 <div>
@@ -689,7 +774,7 @@
                     type="tel"
                     required
                     placeholder="e.g., 01XXXXXXXXX"
-                    class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg text-[#0F172A] tabular-nums focus:outline-none focus:bg-white focus:border-[#D97706]"
+                    class="w-full px-3.5 py-2.5 text-sm bg-[#FAF8F5] border border-[#E2DDD2] rounded-lg text-[#090E1A] tabular-nums focus:outline-none focus:bg-white focus:border-[#C89B3C]"
                   />
                 </div>
               </div>
@@ -701,7 +786,7 @@
                 <select
                   id="quote-category"
                   required
-                  class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg text-[#0F172A] focus:outline-none focus:bg-white focus:border-[#D97706]"
+                  class="w-full px-3.5 py-2.5 text-sm bg-[#FAF8F5] border border-[#E2DDD2] rounded-lg text-[#090E1A] focus:outline-none focus:bg-white focus:border-[#C89B3C]"
                 >
                   <option value="BRANDING & CREATIVE DESIGN">1. BRANDING &amp; CREATIVE DESIGN</option>
                   <option value="PRODUCT LABEL & PACKAGING SOLUTIONS">2. PRODUCT LABEL &amp; PACKAGING SOLUTIONS</option>
@@ -721,16 +806,16 @@
                   rows="4"
                   required
                   placeholder="Describe what you need—e.g., 500 custom packaging boxes with matte lamination, or logo + business card design..."
-                  class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg text-[#0F172A] focus:outline-none focus:bg-white focus:border-[#D97706]"
+                  class="w-full px-3.5 py-2.5 text-sm bg-[#FAF8F5] border border-[#E2DDD2] rounded-lg text-[#090E1A] focus:outline-none focus:bg-white focus:border-[#C89B3C]"
                 ></textarea>
               </div>
 
               <p id="quote-error" class="hidden text-xs font-medium text-red-600"></p>
 
-              <div class="flex flex-wrap items-center gap-3 pt-2">
+              <div class="flex flex-wrap items-center gap-3.5 pt-2">
                 <button
                   type="submit"
-                  class="px-6 py-3 text-sm font-semibold text-white bg-[#0F172A] hover:bg-slate-800 rounded-lg transition-colors min-h-[44px]"
+                  class="btn-luxury-dark px-6 py-3 text-sm font-semibold rounded-lg min-h-[46px]"
                 >
                   Submit Quote Request
                 </button>
@@ -739,7 +824,7 @@
                   href="https://wa.me/8801926280711"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold text-[#0F172A] bg-white border border-slate-300 hover:border-[#D97706] rounded-lg transition-colors min-h-[44px]"
+                  class="btn-luxury-outline-light inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold rounded-lg min-h-[46px]"
                 >
                   <span>Send Quote via WhatsApp</span>
                 </a>
@@ -758,12 +843,12 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-[#0F172A] text-slate-300 border-t border-slate-800">
+  <footer class="bg-[#060911] text-slate-300 border-t border-[#C89B3C]/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-slate-800">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-white/10">
         <div class="md:col-span-4 space-y-3">
-          <p class="text-lg font-extrabold tracking-tight text-white">SIGNATURE AGENCY</p>
-          <p class="text-xs font-medium uppercase tracking-wider text-amber-400">
+          <p class="text-lg font-extrabold tracking-[0.06em] text-white">SIGNATURE AGENCY</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-[#E8C97A]">
             Where Ideas Become Identity
           </p>
           <p class="text-sm text-slate-400">
@@ -775,19 +860,19 @@
         </div>
 
         <div class="md:col-span-4">
-          <p class="text-xs font-semibold uppercase tracking-wider text-white mb-4">6 Service Divisions</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-white mb-4">6 Service Divisions</p>
           <ul class="space-y-2 text-sm text-slate-400">
-            <li><button type="button" data-jump-category="branding" class="hover:text-amber-400 transition-colors text-left">1. Branding &amp; Creative Design</button></li>
-            <li><button type="button" data-jump-category="packaging" class="hover:text-amber-400 transition-colors text-left">2. Product Label &amp; Packaging Solutions</button></li>
-            <li><button type="button" data-jump-category="printing" class="hover:text-amber-400 transition-colors text-left">3. Printing &amp; Corporate Solutions</button></li>
-            <li><button type="button" data-jump-category="apparel" class="hover:text-amber-400 transition-colors text-left">4. T-Shirt &amp; Apparel Branding</button></li>
-            <li><button type="button" data-jump-category="kids" class="hover:text-amber-400 transition-colors text-left">5. Kids Products &amp; Educational Books</button></li>
-            <li><button type="button" data-jump-category="gifts" class="hover:text-amber-400 transition-colors text-left">6. Customized Gift &amp; Corporate Kits</button></li>
+            <li><button type="button" data-jump-category="branding" class="hover:text-[#E8C97A] transition-colors text-left">1. Branding &amp; Creative Design</button></li>
+            <li><button type="button" data-jump-category="packaging" class="hover:text-[#E8C97A] transition-colors text-left">2. Product Label &amp; Packaging Solutions</button></li>
+            <li><button type="button" data-jump-category="printing" class="hover:text-[#E8C97A] transition-colors text-left">3. Printing &amp; Corporate Solutions</button></li>
+            <li><button type="button" data-jump-category="apparel" class="hover:text-[#E8C97A] transition-colors text-left">4. T-Shirt &amp; Apparel Branding</button></li>
+            <li><button type="button" data-jump-category="kids" class="hover:text-[#E8C97A] transition-colors text-left">5. Kids Products &amp; Educational Books</button></li>
+            <li><button type="button" data-jump-category="gifts" class="hover:text-[#E8C97A] transition-colors text-left">6. Customized Gift &amp; Corporate Kits</button></li>
           </ul>
         </div>
 
         <div class="md:col-span-4 space-y-4">
-          <p class="text-xs font-semibold uppercase tracking-wider text-white">Quick Links &amp; Contact</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-white">Quick Links &amp; Contact</p>
           <ul class="space-y-2 text-sm text-slate-400">
             <li><a href="#home" class="hover:text-white transition-colors">Home</a></li>
             <li><a href="#services" class="hover:text-white transition-colors">Services Directory</a></li>
@@ -799,7 +884,7 @@
             <p class="text-slate-400">Location: <span class="text-white">Jhenaidah, Bangladesh</span></p>
             <p class="text-slate-400 mt-1">
               WhatsApp:
-              <a href="https://wa.me/8801926280711" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 font-semibold tabular-nums">
+              <a href="https://wa.me/8801926280711" target="_blank" rel="noopener noreferrer" class="text-[#E8C97A] hover:text-white font-semibold tabular-nums">
                 01926280711
               </a>
             </p>
@@ -822,15 +907,15 @@
     aria-labelledby="modal-title"
     class="hidden fixed inset-0 z-50 flex items-center justify-center p-4"
   >
-    <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm"></div>
-    <div class="relative w-full max-w-2xl bg-white rounded-xl border border-slate-200 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
-      <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200">
-        <p id="modal-category" class="text-xs font-bold uppercase tracking-wider text-[#B45309]">Category</p>
+    <div id="modal-backdrop" class="fixed inset-0 bg-[#060911]/75 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-2xl bg-[#FAF8F5] rounded-xl border border-[#C89B3C]/30 shadow-2xl overflow-hidden max-h-[92vh] flex flex-col">
+      <div class="flex items-center justify-between px-6 py-4 bg-[#090E1A] text-white border-b border-white/10">
+        <p id="modal-category" class="text-xs font-bold uppercase tracking-[0.12em] text-[#E8C97A]">Category</p>
         <button
           id="close-modal-btn"
           type="button"
           aria-label="Close customization modal"
-          class="w-9 h-9 inline-flex items-center justify-center rounded-lg text-slate-500 hover:text-[#0F172A] hover:bg-slate-100 transition-colors"
+          class="w-9 h-9 inline-flex items-center justify-center rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M18 6 6 18M6 6l12 12"></path>
@@ -840,7 +925,7 @@
 
       <div class="p-6 overflow-y-auto grid grid-cols-1 md:grid-cols-12 gap-6">
         <div class="md:col-span-5 space-y-3">
-          <div class="aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
+          <div class="aspect-[4/3] rounded-lg overflow-hidden border border-[#E7E2D8] bg-[#F3EFE7]">
             <img
               id="modal-image"
               src=""
@@ -854,10 +939,10 @@
 
         <div class="md:col-span-7 space-y-4">
           <div>
-            <h3 id="modal-title" class="text-xl font-extrabold text-[#0F172A] tracking-tight"></h3>
+            <h3 id="modal-title" class="text-xl font-extrabold text-[#090E1A] tracking-tight"></h3>
             <p class="mt-1 text-sm text-slate-600">
               Unit / Package Price:
-              <strong id="modal-unit-price" class="text-[#0F172A] tabular-nums"></strong>
+              <strong id="modal-unit-price" class="text-[#090E1A] tabular-nums"></strong>
               <span id="modal-unit-label" class="text-xs text-slate-500"></span>
             </p>
           </div>
@@ -865,11 +950,11 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label for="modal-size" class="block text-xs font-semibold text-slate-700 mb-1">Size / Format</label>
-              <select id="modal-size" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg text-[#0F172A] focus:outline-none focus:border-[#D97706]"></select>
+              <select id="modal-size" class="w-full px-3 py-2 text-sm bg-white border border-[#D6CFC2] rounded-lg text-[#090E1A] focus:outline-none focus:border-[#C89B3C]"></select>
             </div>
             <div>
               <label for="modal-material" class="block text-xs font-semibold text-slate-700 mb-1">Material / Finish</label>
-              <select id="modal-material" class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg text-[#0F172A] focus:outline-none focus:border-[#D97706]"></select>
+              <select id="modal-material" class="w-full px-3 py-2 text-sm bg-white border border-[#D6CFC2] rounded-lg text-[#090E1A] focus:outline-none focus:border-[#C89B3C]"></select>
             </div>
           </div>
 
@@ -881,29 +966,29 @@
               id="modal-notes"
               rows="3"
               placeholder="e.g., Brand name on front, matte navy & gold foil, custom logo file will be shared on WhatsApp..."
-              class="w-full px-3 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg text-[#0F172A] focus:outline-none focus:border-[#D97706]"
+              class="w-full px-3 py-2 text-sm bg-white border border-[#D6CFC2] rounded-lg text-[#090E1A] focus:outline-none focus:border-[#C89B3C]"
             ></textarea>
           </div>
 
-          <div class="flex items-center justify-between pt-2 border-t border-slate-200">
+          <div class="flex items-center justify-between pt-3 border-t border-[#E7E2D8]">
             <div>
               <p class="text-xs text-slate-500">Quantity</p>
-              <div class="mt-1 inline-flex items-center border border-slate-200 rounded-lg bg-white">
-                <button id="modal-qty-minus" type="button" aria-label="Decrease quantity" class="w-9 h-9 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-l-lg">-</button>
-                <span id="modal-qty-value" class="w-10 text-center text-sm font-bold text-[#0F172A] tabular-nums">1</span>
-                <button id="modal-qty-plus" type="button" aria-label="Increase quantity" class="w-9 h-9 text-sm font-bold text-slate-700 hover:bg-slate-50 rounded-r-lg">+</button>
+              <div class="mt-1 inline-flex items-center border border-[#D6CFC2] rounded-lg bg-white">
+                <button id="modal-qty-minus" type="button" aria-label="Decrease quantity" class="w-9 h-9 text-sm font-bold text-slate-700 hover:bg-[#FAF8F5] rounded-l-lg">-</button>
+                <span id="modal-qty-value" class="w-10 text-center text-sm font-bold text-[#090E1A] tabular-nums">1</span>
+                <button id="modal-qty-plus" type="button" aria-label="Increase quantity" class="w-9 h-9 text-sm font-bold text-slate-700 hover:bg-[#FAF8F5] rounded-r-lg">+</button>
               </div>
             </div>
             <div class="text-right">
               <p class="text-xs text-slate-500">Estimated Total</p>
-              <p id="modal-line-total" class="text-xl font-extrabold text-[#0F172A] tabular-nums">&#2547;0</p>
+              <p id="modal-line-total" class="text-xl font-extrabold text-[#090E1A] tabular-nums">&#2547;0</p>
             </div>
           </div>
 
           <button
             id="modal-add-btn"
             type="button"
-            class="w-full py-3 px-5 text-sm font-semibold text-white bg-[#0F172A] hover:bg-slate-800 rounded-lg transition-colors min-h-[44px]"
+            class="btn-luxury-gold w-full py-3.5 px-5 text-sm font-bold rounded-lg min-h-[46px]"
           >
             Add Customized Item to Order Bag
           </button>
@@ -920,22 +1005,22 @@
     aria-labelledby="drawer-heading"
     class="hidden fixed inset-0 z-50"
   >
-    <div id="drawer-backdrop" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm"></div>
+    <div id="drawer-backdrop" class="fixed inset-0 bg-[#060911]/75 backdrop-blur-sm"></div>
     <aside
       id="drawer-panel"
-      class="drawer-panel fixed top-0 right-0 h-full w-full max-w-md bg-white border-l border-slate-200 shadow-2xl flex flex-col translate-x-full"
+      class="drawer-panel fixed top-0 right-0 h-full w-full max-w-md bg-[#FAF8F5] border-l border-[#C89B3C]/25 shadow-2xl flex flex-col translate-x-full"
     >
       <!-- Drawer Header -->
-      <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between">
+      <div class="px-6 py-4 bg-[#090E1A] text-white border-b border-white/10 flex items-center justify-between">
         <div>
-          <h2 id="drawer-heading" class="text-lg font-extrabold text-[#0F172A]">Order &amp; Quote Bag</h2>
-          <p id="drawer-sub" class="text-xs text-slate-500 tabular-nums">0 items selected</p>
+          <h2 id="drawer-heading" class="text-lg font-extrabold tracking-tight">Order &amp; Quote Bag</h2>
+          <p id="drawer-sub" class="text-xs text-[#E8C97A] tabular-nums">0 items selected</p>
         </div>
         <button
           id="close-drawer-btn"
           type="button"
           aria-label="Close Order Bag"
-          class="w-9 h-9 inline-flex items-center justify-center rounded-lg text-slate-500 hover:text-[#0F172A] hover:bg-slate-100 transition-colors"
+          class="w-9 h-9 inline-flex items-center justify-center rounded-lg text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
         >
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M18 6 6 18M6 6l12 12"></path>
@@ -945,45 +1030,45 @@
 
       <!-- Drawer View 1: Bag Items -->
       <div id="drawer-bag-view" class="flex-1 flex flex-col min-h-0">
-        <div id="bag-items-container" class="flex-1 overflow-y-auto px-6 py-4 divide-y divide-slate-200">
+        <div id="bag-items-container" class="flex-1 overflow-y-auto px-6 py-4 divide-y divide-[#E7E2D8] bg-white">
           <!-- Bag items injected by JS -->
         </div>
 
-        <div id="bag-empty-state" class="hidden flex-1 flex flex-col items-center justify-center text-center px-6 py-12">
-          <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center mb-3">
+        <div id="bag-empty-state" class="hidden flex-1 flex flex-col items-center justify-center text-center px-6 py-12 bg-white">
+          <div class="w-12 h-12 rounded-full bg-[#F3EFE7] text-[#9A6F1C] flex items-center justify-center mb-3">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
               <path d="M3 6h18"></path>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
           </div>
-          <p class="text-sm font-bold text-[#0F172A]">Your Order Bag is Empty</p>
+          <p class="text-sm font-bold text-[#090E1A]">Your Order Bag is Empty</p>
           <p class="text-xs text-slate-500 mt-1 mb-5">Browse our 6 divisions and add items or custom packages to start an order.</p>
           <button
             id="empty-browse-btn"
             type="button"
-            class="px-5 py-2.5 text-xs font-semibold text-white bg-[#0F172A] hover:bg-slate-800 rounded-lg transition-colors"
+            class="btn-luxury-dark px-5 py-2.5 text-xs font-semibold rounded-lg"
           >
             Browse Catalog
           </button>
         </div>
 
         <!-- Bag Footer Summary & Dual Checkout Actions -->
-        <div id="bag-footer" class="border-t border-slate-200 bg-[#F8FAFC] px-6 py-5 space-y-4">
+        <div id="bag-footer" class="border-t border-[#E7E2D8] bg-[#FAF8F5] px-6 py-5 space-y-4">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-wider text-slate-600 mb-2">Delivery Option</p>
-            <div class="grid grid-cols-2 gap-2">
-              <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-white cursor-pointer text-xs">
-                <input type="radio" name="delivery-option" value="local" checked class="accent-[#D97706]" />
+            <p class="text-[11px] font-bold uppercase tracking-[0.12em] text-slate-600 mb-2">Delivery Option</p>
+            <div class="grid grid-cols-2 gap-2.5">
+              <label class="flex items-center gap-2 p-2.5 rounded-lg border border-[#D6CFC2] bg-white cursor-pointer text-xs">
+                <input type="radio" name="delivery-option" value="local" checked class="accent-[#C89B3C]" />
                 <span>
-                  <strong class="block text-[#0F172A]">Jhenaidah Local</strong>
+                  <strong class="block text-[#090E1A]">Jhenaidah Local</strong>
                   <span class="text-slate-500 tabular-nums">&#2547;60</span>
                 </span>
               </label>
-              <label class="flex items-center gap-2 p-2.5 rounded-lg border border-slate-200 bg-white cursor-pointer text-xs">
-                <input type="radio" name="delivery-option" value="courier" class="accent-[#D97706]" />
+              <label class="flex items-center gap-2 p-2.5 rounded-lg border border-[#D6CFC2] bg-white cursor-pointer text-xs">
+                <input type="radio" name="delivery-option" value="courier" class="accent-[#C89B3C]" />
                 <span>
-                  <strong class="block text-[#0F172A]">Nationwide Courier</strong>
+                  <strong class="block text-[#090E1A]">Nationwide Courier</strong>
                   <span class="text-slate-500 tabular-nums">&#2547;130</span>
                 </span>
               </label>
@@ -993,13 +1078,13 @@
           <div class="space-y-1.5 text-sm">
             <div class="flex justify-between text-slate-600">
               <span>Estimated Subtotal</span>
-              <span id="bag-subtotal" class="font-semibold text-[#0F172A] tabular-nums">&#2547;0</span>
+              <span id="bag-subtotal" class="font-semibold text-[#090E1A] tabular-nums">&#2547;0</span>
             </div>
             <div class="flex justify-between text-slate-600">
               <span>Delivery Charge</span>
-              <span id="bag-delivery-fee" class="font-semibold text-[#0F172A] tabular-nums">&#2547;60</span>
+              <span id="bag-delivery-fee" class="font-semibold text-[#090E1A] tabular-nums">&#2547;60</span>
             </div>
-            <div class="flex justify-between text-base font-extrabold text-[#0F172A] pt-2 border-t border-slate-200">
+            <div class="flex justify-between text-base font-extrabold text-[#090E1A] pt-2 border-t border-[#E2DDD2]">
               <span>Estimated Total</span>
               <span id="bag-grand-total" class="tabular-nums">&#2547;0</span>
             </div>
@@ -1009,7 +1094,7 @@
             <button
               id="start-online-checkout-btn"
               type="button"
-              class="w-full py-3 px-4 text-sm font-semibold text-white bg-[#0F172A] hover:bg-slate-800 rounded-lg transition-colors min-h-[44px]"
+              class="btn-luxury-dark w-full py-3 px-4 text-sm font-semibold rounded-lg min-h-[44px]"
             >
               Confirm Order Online
             </button>
@@ -1018,7 +1103,7 @@
               href="https://wa.me/8801926280711"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 text-sm font-semibold text-[#0F172A] bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors min-h-[44px]"
+              class="btn-luxury-gold w-full inline-flex items-center justify-center gap-2 py-3 px-4 text-sm font-bold rounded-lg min-h-[44px]"
             >
               <span>Send Order Directly to WhatsApp</span>
             </a>
@@ -1027,34 +1112,34 @@
       </div>
 
       <!-- Drawer View 2: Online Checkout Form -->
-      <div id="drawer-checkout-view" class="hidden flex-1 flex flex-col min-h-0">
-        <div class="px-6 py-3 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-          <button id="back-to-bag-btn" type="button" class="text-xs font-semibold text-[#B45309] hover:text-[#0F172A]">
+      <div id="drawer-checkout-view" class="hidden flex-1 flex flex-col min-h-0 bg-white">
+        <div class="px-6 py-3 bg-[#F3EFE7] border-b border-[#E7E2D8] flex items-center justify-between">
+          <button id="back-to-bag-btn" type="button" class="text-xs font-bold text-[#9A6F1C] hover:text-[#090E1A]">
             &larr; Back to Order Bag
           </button>
-          <span class="text-xs font-semibold text-slate-500 tabular-nums" id="checkout-total-pill"></span>
+          <span class="text-xs font-bold text-[#090E1A] tabular-nums" id="checkout-total-pill"></span>
         </div>
 
         <form id="checkout-form" class="flex-1 overflow-y-auto px-6 py-5 space-y-4" novalidate>
           <div>
             <label for="co-name" class="block text-xs font-semibold text-slate-700 mb-1">Full Name <span class="text-red-600">*</span></label>
-            <input id="co-name" type="text" required placeholder="Your full name" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:bg-white focus:border-[#D97706]" />
+            <input id="co-name" type="text" required placeholder="Your full name" class="w-full px-3.5 py-2.5 text-sm bg-[#FAF8F5] border border-[#D6CFC2] rounded-lg focus:outline-none focus:bg-white focus:border-[#C89B3C]" />
           </div>
           <div>
             <label for="co-phone" class="block text-xs font-semibold text-slate-700 mb-1">Phone / WhatsApp <span class="text-red-600">*</span></label>
-            <input id="co-phone" type="tel" required placeholder="01XXXXXXXXX" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg tabular-nums focus:outline-none focus:bg-white focus:border-[#D97706]" />
+            <input id="co-phone" type="tel" required placeholder="01XXXXXXXXX" class="w-full px-3.5 py-2.5 text-sm bg-[#FAF8F5] border border-[#D6CFC2] rounded-lg tabular-nums focus:outline-none focus:bg-white focus:border-[#C89B3C]" />
           </div>
           <div>
             <label for="co-business" class="block text-xs font-semibold text-slate-700 mb-1">Business / Brand Name (Optional)</label>
-            <input id="co-business" type="text" placeholder="Company or shop name" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:bg-white focus:border-[#D97706]" />
+            <input id="co-business" type="text" placeholder="Company or shop name" class="w-full px-3.5 py-2.5 text-sm bg-[#FAF8F5] border border-[#D6CFC2] rounded-lg focus:outline-none focus:bg-white focus:border-[#C89B3C]" />
           </div>
           <div>
             <label for="co-address" class="block text-xs font-semibold text-slate-700 mb-1">Delivery Address <span class="text-red-600">*</span></label>
-            <textarea id="co-address" rows="2" required placeholder="Full address with area & district" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:bg-white focus:border-[#D97706]"></textarea>
+            <textarea id="co-address" rows="2" required placeholder="Full address with area & district" class="w-full px-3.5 py-2.5 text-sm bg-[#FAF8F5] border border-[#D6CFC2] rounded-lg focus:outline-none focus:bg-white focus:border-[#C89B3C]"></textarea>
           </div>
           <div>
             <label for="co-payment" class="block text-xs font-semibold text-slate-700 mb-1">Payment Method</label>
-            <select id="co-payment" class="w-full px-3.5 py-2.5 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:bg-white focus:border-[#D97706]">
+            <select id="co-payment" class="w-full px-3.5 py-2.5 text-sm bg-[#FAF8F5] border border-[#D6CFC2] rounded-lg focus:outline-none focus:bg-white focus:border-[#C89B3C]">
               <option value="Cash on Delivery">Cash on Delivery</option>
               <option value="bKash">bKash</option>
               <option value="Nagad">Nagad</option>
@@ -1063,7 +1148,7 @@
           </div>
           <p id="co-error" class="hidden text-xs font-medium text-red-600"></p>
           <div class="pt-2 space-y-2.5">
-            <button type="submit" class="w-full py-3 px-4 text-sm font-semibold text-white bg-[#0F172A] hover:bg-slate-800 rounded-lg transition-colors min-h-[44px]">
+            <button type="submit" class="btn-luxury-gold w-full py-3 px-4 text-sm font-bold rounded-lg min-h-[44px]">
               Generate Order Confirmation Invoice
             </button>
           </div>
@@ -1071,24 +1156,24 @@
       </div>
 
       <!-- Drawer View 3: Instant Order Confirmation Invoice -->
-      <div id="drawer-invoice-view" class="hidden flex-1 overflow-y-auto px-6 py-6 space-y-5">
+      <div id="drawer-invoice-view" class="hidden flex-1 overflow-y-auto px-6 py-6 space-y-5 bg-white">
         <div class="p-4 rounded-lg bg-emerald-50 border border-emerald-200">
           <p class="text-xs font-bold uppercase tracking-wider text-emerald-800">Order Confirmed</p>
-          <h3 id="invoice-id" class="text-lg font-extrabold text-[#0F172A] tabular-nums mt-0.5">#SIG-000000</h3>
+          <h3 id="invoice-id" class="text-lg font-extrabold text-[#090E1A] tabular-nums mt-0.5">#SIG-000000</h3>
           <p id="invoice-timestamp" class="text-xs text-slate-600 mt-0.5"></p>
         </div>
 
-        <div class="border border-slate-200 rounded-lg p-4 space-y-3 text-xs">
-          <div class="flex justify-between border-b border-slate-200 pb-2">
-            <span class="font-bold text-[#0F172A]">SIGNATURE AGENCY</span>
+        <div class="border border-[#E7E2D8] rounded-lg p-4 space-y-3 text-xs bg-[#FAF8F5]">
+          <div class="flex justify-between border-b border-[#E2DDD2] pb-2">
+            <span class="font-bold text-[#090E1A]">SIGNATURE AGENCY</span>
             <span class="text-slate-500">Jhenaidah, Bangladesh</span>
           </div>
           <div id="invoice-customer" class="space-y-1 text-slate-700"></div>
-          <div class="border-t border-slate-200 pt-2">
-            <p class="font-bold text-[#0F172A] mb-2">Itemized Summary</p>
+          <div class="border-t border-[#E2DDD2] pt-2">
+            <p class="font-bold text-[#090E1A] mb-2">Itemized Summary</p>
             <ul id="invoice-items" class="space-y-1.5"></ul>
           </div>
-          <div id="invoice-totals" class="border-t border-slate-200 pt-2 space-y-1"></div>
+          <div id="invoice-totals" class="border-t border-[#E2DDD2] pt-2 space-y-1"></div>
         </div>
 
         <div class="space-y-2.5">
@@ -1097,14 +1182,14 @@
             href="https://wa.me/8801926280711"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-full inline-flex items-center justify-center gap-2 py-3 px-4 text-sm font-semibold text-[#0F172A] bg-amber-400 hover:bg-amber-300 rounded-lg transition-colors min-h-[44px]"
+            class="btn-luxury-gold w-full inline-flex items-center justify-center gap-2 py-3 px-4 text-sm font-bold rounded-lg min-h-[44px]"
           >
             <span>Send Invoice to WhatsApp (01926280711)</span>
           </a>
           <button
             id="invoice-done-btn"
             type="button"
-            class="w-full py-2.5 px-4 text-xs font-semibold text-[#0F172A] bg-white border border-slate-300 hover:bg-slate-50 rounded-lg transition-colors"
+            class="btn-luxury-outline-light w-full py-2.5 px-4 text-xs font-semibold rounded-lg"
           >
             Continue Browsing
           </button>
@@ -1118,13 +1203,13 @@
     id="toast"
     role="status"
     aria-live="polite"
-    class="hidden fixed bottom-24 right-5 z-50 max-w-xs bg-[#0F172A] text-white text-xs font-medium px-4 py-3 rounded-lg shadow-xl border border-slate-700"
+    class="hidden fixed bottom-24 right-5 z-50 max-w-xs bg-[#090E1A] text-white text-xs font-medium px-4 py-3 rounded-lg shadow-xl border border-[#C89B3C]/50"
   ></div>
 
   <!-- Floating Bottom-Right WhatsApp Widget -->
   <div class="fixed bottom-5 right-5 z-40 group">
     <span
-      class="pointer-events-none opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity absolute right-16 top-1/2 -translate-y-1/2 whitespace-nowrap bg-[#0F172A] text-white text-xs font-semibold px-3 py-2 rounded-lg shadow-lg border border-slate-700"
+      class="pointer-events-none opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity absolute right-16 top-1/2 -translate-y-1/2 whitespace-nowrap bg-[#090E1A] text-white text-xs font-semibold px-3.5 py-2 rounded-lg shadow-lg border border-[#C89B3C]/40"
     >
       Chat on WhatsApp: 01926280711
     </span>
@@ -1133,7 +1218,7 @@
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp: 01926280711"
-      class="w-14 h-14 rounded-full bg-[#16A34A] hover:bg-[#15803D] text-white shadow-lg hover:scale-105 transition-transform flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D97706]"
+      class="w-14 h-14 rounded-full bg-[#16A34A] hover:bg-[#15803D] text-white shadow-[0_10px_25px_-5px_rgba(22,163,74,0.55)] ring-2 ring-white/80 hover:scale-105 transition-transform flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8C97A]"
     >
       <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2Zm5.81 14.08c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.14.11-1.84-.11-.42-.13-.97-.31-1.67-.61-2.94-1.27-4.86-4.24-5.01-4.44-.15-.2-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.59.83 2.04.9 2.19.07.15.12.32.02.52-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.36 1.45.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.4-.25.67-.15.27.1 1.73.82 2.03.97.3.15.5.22.57.34.07.12.07.7-.17 1.38Z" />
@@ -1595,10 +1680,10 @@
               role="tab"
               aria-selected="${isActive}"
               data-service-tab="${cat.id}"
-              class="px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 min-h-[40px] ${
+              class="px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap shrink-0 min-h-[42px] ${
                 isActive
-                  ? 'bg-[#0F172A] text-white'
-                  : 'bg-[#F8FAFC] text-slate-600 hover:text-[#0F172A] hover:bg-slate-100 border border-slate-200'
+                  ? 'btn-luxury-dark'
+                  : 'bg-white text-slate-600 hover:text-[#090E1A] hover:border-[#C89B3C]/60 border border-[#E2DDD2]'
               }"
             >
               ${escapeHtml(cat.shortTitle)}
@@ -1619,14 +1704,14 @@
             (serviceName, idx) => `
             <li class="py-3.5 flex items-center justify-between gap-4 group">
               <div class="flex items-baseline gap-3">
-                <span class="text-xs font-bold text-[#B45309] tabular-nums">0${idx + 1}.</span>
-                <span class="text-sm sm:text-base font-medium text-[#0F172A]">${escapeHtml(serviceName)}</span>
+                <span class="text-xs font-bold text-[#9A6F1C] tabular-nums">0${idx + 1}.</span>
+                <span class="text-sm sm:text-base font-medium text-[#090E1A]">${escapeHtml(serviceName)}</span>
               </div>
               <button
                 type="button"
                 data-quote-service="${escapeHtml(serviceName)}"
                 data-quote-category="${escapeHtml(activeCat.title)}"
-                class="text-xs font-semibold text-slate-500 hover:text-[#B45309] transition-colors whitespace-nowrap shrink-0 px-2.5 py-1.5 rounded border border-transparent hover:border-slate-200"
+                class="text-xs font-semibold text-slate-600 hover:text-[#9A6F1C] transition-colors whitespace-nowrap shrink-0 px-3 py-1.5 rounded-md border border-transparent hover:border-[#C89B3C]/40 hover:bg-[#FAF8F5]"
               >
                 Request Quote &rarr;
               </button>
@@ -1648,10 +1733,10 @@
               <button
                 type="button"
                 data-catalog-filter="${f.id}"
-                class="px-3.5 py-2 text-xs font-semibold rounded-lg transition-colors whitespace-nowrap shrink-0 min-h-[38px] ${
+                class="px-4 py-2 text-xs font-semibold rounded-lg transition-all whitespace-nowrap shrink-0 min-h-[38px] ${
                   isActive
-                    ? 'bg-[#0F172A] text-white'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:border-[#D97706] hover:text-[#0F172A]'
+                    ? 'btn-luxury-dark'
+                    : 'bg-white text-slate-600 border border-[#D6CFC2] hover:border-[#C89B3C] hover:text-[#090E1A]'
                 }"
               >
                 ${escapeHtml(f.label)}
@@ -1693,8 +1778,8 @@
         catalogGridEl.innerHTML = filtered
           .map(
             (item) => `
-            <article class="bg-white border border-slate-200 rounded-xl overflow-hidden flex flex-col hover:-translate-y-0.5 hover:shadow-md transition-all duration-200">
-              <div class="aspect-[4/3] bg-slate-100 overflow-hidden relative">
+            <article class="bg-white border border-[#E7E2D8] rounded-xl overflow-hidden flex flex-col hover:-translate-y-0.5 hover:border-[#C89B3C]/50 hover:shadow-[0_16px_36px_-14px_rgba(9,14,26,0.14)] transition-all duration-200">
+              <div class="aspect-[4/3] bg-[#F3EFE7] overflow-hidden relative">
                 <img
                   src="${escapeHtml(item.image)}"
                   alt="${escapeHtml(item.name)}"
@@ -1702,16 +1787,16 @@
                   class="w-full h-full object-cover"
                   onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
                 />
-                <div class="hidden w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center p-4 text-center text-xs font-semibold text-slate-600">
+                <div class="hidden w-full h-full bg-gradient-to-br from-[#F3EFE7] to-[#E7E2D8] flex items-center justify-center p-4 text-center text-xs font-semibold text-slate-600">
                   ${escapeHtml(item.name)}
                 </div>
               </div>
-              <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+              <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between gap-4">
                 <div>
-                  <p class="text-[11px] font-bold uppercase tracking-wider text-[#B45309] mb-1.5">
+                  <p class="text-[11px] font-bold uppercase tracking-[0.1em] text-[#9A6F1C] mb-1.5">
                     ${escapeHtml(item.categoryLabel)}
                   </p>
-                  <h3 class="text-base font-bold text-[#0F172A] leading-snug mb-2">
+                  <h3 class="text-base font-bold text-[#090E1A] leading-snug mb-2">
                     ${escapeHtml(item.name)}
                   </h3>
                   <p class="text-xs leading-relaxed text-slate-600 line-clamp-2">
@@ -1720,10 +1805,10 @@
                 </div>
 
                 <div>
-                  <div class="flex items-baseline justify-between gap-2 pb-4 border-b border-slate-100">
+                  <div class="flex items-baseline justify-between gap-2 pb-4 border-b border-[#ECE7DD]">
                     <div>
                       <span class="text-[11px] text-slate-500 block">Starting from</span>
-                      <span class="text-lg font-extrabold text-[#0F172A] tabular-nums">${formatBDT(item.price)}</span>
+                      <span class="text-lg font-extrabold text-[#090E1A] tabular-nums">${formatBDT(item.price)}</span>
                     </div>
                     <span class="text-xs text-slate-500 tabular-nums">${escapeHtml(item.unit)}</span>
                   </div>
@@ -1732,14 +1817,14 @@
                     <button
                       type="button"
                       data-add-product="${item.id}"
-                      class="px-3 py-2.5 text-xs font-semibold text-white bg-[#0F172A] hover:bg-slate-800 rounded-lg transition-colors whitespace-nowrap min-h-[40px]"
+                      class="btn-luxury-dark px-3 py-2.5 text-xs font-semibold rounded-lg whitespace-nowrap min-h-[42px]"
                     >
                       Add to Order Bag
                     </button>
                     <button
                       type="button"
                       data-quick-view="${item.id}"
-                      class="px-3 py-2.5 text-xs font-semibold text-[#0F172A] bg-white border border-slate-300 hover:border-[#D97706] rounded-lg transition-colors whitespace-nowrap min-h-[40px]"
+                      class="btn-luxury-outline-light px-3 py-2.5 text-xs font-semibold rounded-lg whitespace-nowrap min-h-[42px]"
                     >
                       Customize / View
                     </button>
@@ -1876,11 +1961,11 @@
                   src="${escapeHtml(item.image)}"
                   alt="${escapeHtml(item.name)}"
                   referrerpolicy="no-referrer"
-                  class="w-16 h-16 rounded-lg object-cover border border-slate-200 shrink-0 bg-slate-100"
+                  class="w-16 h-16 rounded-lg object-cover border border-[#E7E2D8] shrink-0 bg-[#F3EFE7]"
                 />
                 <div class="flex-1 min-w-0">
                   <div class="flex items-start justify-between gap-2">
-                    <h4 class="text-sm font-bold text-[#0F172A] leading-snug">${escapeHtml(item.name)}</h4>
+                    <h4 class="text-sm font-bold text-[#090E1A] leading-snug">${escapeHtml(item.name)}</h4>
                     <button
                       type="button"
                       data-remove-uid="${escapeHtml(item.uid)}"
@@ -1892,12 +1977,12 @@
                   </div>
                   <p class="text-[11px] text-slate-500 mt-0.5 break-words">${escapeHtml(item.spec)}</p>
                   <div class="mt-2.5 flex items-center justify-between">
-                    <div class="inline-flex items-center border border-slate-200 rounded-md bg-white">
-                      <button type="button" data-qty-uid="${escapeHtml(item.uid)}" data-qty-delta="-1" aria-label="Decrease quantity" class="w-7 h-7 text-xs font-bold text-slate-700 hover:bg-slate-50">-</button>
-                      <span class="w-8 text-center text-xs font-bold text-[#0F172A] tabular-nums">${item.qty}</span>
-                      <button type="button" data-qty-uid="${escapeHtml(item.uid)}" data-qty-delta="1" aria-label="Increase quantity" class="w-7 h-7 text-xs font-bold text-slate-700 hover:bg-slate-50">+</button>
+                    <div class="inline-flex items-center border border-[#D6CFC2] rounded-md bg-white">
+                      <button type="button" data-qty-uid="${escapeHtml(item.uid)}" data-qty-delta="-1" aria-label="Decrease quantity" class="w-7 h-7 text-xs font-bold text-slate-700 hover:bg-[#FAF8F5]">-</button>
+                      <span class="w-8 text-center text-xs font-bold text-[#090E1A] tabular-nums">${item.qty}</span>
+                      <button type="button" data-qty-uid="${escapeHtml(item.uid)}" data-qty-delta="1" aria-label="Increase quantity" class="w-7 h-7 text-xs font-bold text-slate-700 hover:bg-[#FAF8F5]">+</button>
                     </div>
-                    <span class="text-sm font-extrabold text-[#0F172A] tabular-nums">${formatBDT(item.price * item.qty)}</span>
+                    <span class="text-sm font-extrabold text-[#090E1A] tabular-nums">${formatBDT(item.price * item.qty)}</span>
                   </div>
                 </div>
               </div>
@@ -2217,7 +2302,7 @@
             (item) => `
             <li class="flex justify-between gap-2">
               <span class="text-slate-700">${escapeHtml(item.name)} &times; ${item.qty}</span>
-              <span class="font-semibold text-[#0F172A] tabular-nums shrink-0">${formatBDT(item.price * item.qty)}</span>
+              <span class="font-semibold text-[#090E1A] tabular-nums shrink-0">${formatBDT(item.price * item.qty)}</span>
             </li>
           `
           )
@@ -2232,7 +2317,7 @@
             <span>Delivery Charge</span>
             <span class="tabular-nums">${formatBDT(deliveryFee)}</span>
           </div>
-          <div class="flex justify-between text-sm font-extrabold text-[#0F172A] pt-1">
+          <div class="flex justify-between text-sm font-extrabold text-[#090E1A] pt-1">
             <span>Grand Total</span>
             <span class="tabular-nums">${formatBDT(total)}</span>
           </div>
